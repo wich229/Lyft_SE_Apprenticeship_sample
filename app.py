@@ -11,6 +11,8 @@ def test():
         data = request.json
         cut_str = StringCut(data["string_to_cut"])
         json_str = {"return_string": cut_str}
+    else:
+        return "Content-Type not be supported"
     return jsonify(json_str)
 
 def StringCut(string):
