@@ -5,6 +5,8 @@ app = Flask(__name__)
 
 
 @app.route('/test', methods=['POST'])
+# take the POST request and check the content_type is JSON.
+# call the function to cut the string and return as a JSON object.
 def test():
     content_type = request.headers.get("Content-Type")
     if (content_type == "application/json"):
@@ -15,6 +17,7 @@ def test():
         return "Content-Type not be supported"
     return jsonify(json_str)
 
+# the function for cutting the string.
 def StringCut(string):
     i = 0
     cut_str_list = []
